@@ -12,7 +12,7 @@ EXPOSE 8081
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
-COPY ["API_LibraryAdministrator/API_LibraryAdministrator.csproj", "API_LibraryAdministrator/"]
+COPY ["API_LibraryAdministrator/API_LibraryAdministrator/API_LibraryAdministrator.csproj", "API_LibraryAdministrator/API_LibraryAdministrator/"]
 RUN dotnet restore "./API_LibraryAdministrator/API_LibraryAdministrator.csproj"
 COPY . .
 WORKDIR "/src/API_LibraryAdministrator"
