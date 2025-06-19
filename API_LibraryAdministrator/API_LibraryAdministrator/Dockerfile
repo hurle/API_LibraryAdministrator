@@ -16,7 +16,7 @@ COPY ["API_LibraryAdministrator/API_LibraryAdministrator/API_LibraryAdministrato
 RUN dotnet restore "./API_LibraryAdministrator/API_LibraryAdministrator/API_LibraryAdministrator.csproj"
 COPY . .
 WORKDIR "/src/API_LibraryAdministrator"
-RUN dotnet build "./API_LibraryAdministrator/API_LibraryAdministrator/API_LibraryAdministrator.csproj" -c $BUILD_CONFIGURATION -o /app/build
+RUN dotnet build "API_LibraryAdministrator/API_LibraryAdministrator/API_LibraryAdministrator.csproj" -c $BUILD_CONFIGURATION -o /app/build
 
 # Esta fase se usa para publicar el proyecto de servicio que se copiará en la fase final.
 FROM build AS publish
